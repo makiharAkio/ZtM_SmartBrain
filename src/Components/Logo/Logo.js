@@ -6,7 +6,7 @@ import './Logo.css';
 const Logo = () => {
     return (
         <div className="ma4 mt0">  
-            <Tilt className="Tilt br2 shadow-2">
+            <Tilt className="Tilt br2 shadow-2" tiltMaxAngleX = {10} tiltMaxAngleY = {10} >
                 <div className="pa3">
                     <img src={brain} alt="https://icons8.com" />
                     <br />
