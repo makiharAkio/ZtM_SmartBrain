@@ -10,7 +10,7 @@ import Register from './Components/Register/Register';
 import 'tachyons';
 import ParticlesBg from 'particles-bg'
 
-
+const API = "https://api-ztm-smartbrain.onrender.com";
 
 const initialState = {
   input: '',
@@ -96,7 +96,7 @@ class App extends Component {
 
   onClickDetect = () => {
     this.setState({ imgUrl: this.state.input });
-      fetch('http://localhost:3000/imgurl', {
+      fetch(API + '/imgurl', {
         method: 'post',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
@@ -106,7 +106,7 @@ class App extends Component {
       .then(response => response.json())
       .then(response => {
         if (response) {
-          fetch('http://localhost:3000/img', {
+          fetch(API + '/img', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
