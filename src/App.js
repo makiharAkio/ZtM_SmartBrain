@@ -96,7 +96,8 @@ class App extends Component {
 
   onClickDetect = () => {
     this.setState({ imgUrl: this.state.input });
-      fetch(API + '/imgurl', {
+      // fetch(API + '/imgurl', {
+      fetch('https://api-ztm-smartbrain.onrender.com/imgurl', {
         method: 'post',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
@@ -106,7 +107,8 @@ class App extends Component {
       .then(response => response.json())
       .then(response => {
         if (response) {
-          fetch(API + '/img', {
+          // fetch(API + '/img', {
+          fetch('https://api-ztm-smartbrain.onrender.com/img', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({

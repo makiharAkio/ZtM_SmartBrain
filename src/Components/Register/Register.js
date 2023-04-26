@@ -22,7 +22,8 @@ class Register extends React.Component  {
     }
 
     onSubmitSignIn = () => {
-        fetch(this.props.API + '/register', {
+        // fetch(this.props.API + '/register', {
+        fetch('https://api-ztm-smartbrain.onrender.com/register', {
             method: 'post',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
